@@ -1,15 +1,15 @@
 import { TEST_DATA } from '../data/testData';
 import { test, expect } from '../fixture/pageObjectFixture'
 
-test('ValidateLogin', async({page, loginPage, productListPage, cartPage})=>{
+test('ValidateLogin', async({page})=>{
 
     await page.goto(TEST_DATA.urls.inventory);
     expect(await page).toHaveURL(TEST_DATA.urls.inventory);
-     await page.waitForTimeout(2000);
+    await page.waitForTimeout(2000);
 
 })
 
-test('Validate Add To Cart', async({page, loginPage, productListPage, cartPage})=>{
+test('Validate Add To Cart', async({page, productListPage})=>{
 
     await page.goto(TEST_DATA.urls.inventory);
      expect(await page).toHaveURL(TEST_DATA.urls.inventory);
@@ -28,7 +28,8 @@ test('Validate Add To Cart', async({page, loginPage, productListPage, cartPage})
 })
 
 
-test('Validate Cart Item', async({page, loginPage, productListPage, cartPage})=>{
+
+test('Validate Cart Item', async({page, productListPage, cartPage})=>{
 
      await page.goto(TEST_DATA.urls.inventory);
      expect(await page).toHaveURL(TEST_DATA.urls.inventory);
